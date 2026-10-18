@@ -1,0 +1,79 @@
+{
+    "name": "intosql/intosql",
+    "description": "Convert spreadsheets, CSV and JSON into SQL with the IntoSQL API.",
+    "type": "library",
+    "keywords": [
+        "converter",
+        "csv",
+        "excel",
+        "mysql",
+        "postgresql",
+        "sql",
+        "sqlite",
+        "xlsx"
+    ],
+    "homepage": "https://intosql.com/docs/sdks/php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "IntoSQL",
+            "homepage": "https://intosql.com"
+        }
+    ],
+    "support": {
+        "docs": "https://intosql.com/docs/sdks/php",
+        "source": "https://github.com/alfonsobries/intosql-php",
+        "issues": "https://github.com/alfonsobries/intosql-php/issues"
+    },
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.8"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.18",
+        "pestphp/pest": "^3.8",
+        "phpstan/phpstan": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "IntoSQL\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "IntoSQL\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "lint": [
+            "pint --test",
+            "phpstan analyse --no-progress --memory-limit=1G"
+        ],
+        "test": "pest --coverage --min=100"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "archive": {
+        "exclude": [
+            "/vendor",
+            "/dist",
+            "/tests",
+            "/scripts",
+            "/coverage",
+            "/.phpunit.cache",
+            "/composer.lock",
+            "/phpunit.xml",
+            "/phpstan.neon",
+            "/pint.json",
+            "/.gitattributes",
+            "/.gitignore"
+        ]
+    }
+}
