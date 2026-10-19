@@ -34,6 +34,61 @@ final class Data
         return is_int($value) ? $value : 0;
     }
 
+    /** @param array<mixed> $data */
+    public static function nullableInt(array $data, string $key): ?int
+    {
+        $value = $data[$key] ?? null;
+
+        return is_int($value) ? $value : null;
+    }
+
+    /** @param array<mixed> $data */
+    public static function bool(array $data, string $key): bool
+    {
+        return ($data[$key] ?? null) === true;
+    }
+
+    /**
+     * The strings in a list field, skipping anything else.
+     *
+     * @param  array<mixed>  $data
+     * @return list<string>
+     */
+    public static function strings(array $data, string $key): array
+    {
+        return array_values(array_filter(self::map($data, $key), is_string(...)));
+    }
+
+    /**
+     * The integers in a list field, skipping anything else.
+     *
+     * @param  array<mixed>  $data
+     * @return list<int>
+     */
+    public static function ints(array $data, string $key): array
+    {
+        return array_values(array_filter(self::map($data, $key), is_int(...)));
+    }
+
+    /**
+     * The string values of an object field, keyed by name, skipping anything else.
+     *
+     * @param  array<mixed>  $data
+     * @return array<string, string>
+     */
+    public static function stringMap(array $data, string $key): array
+    {
+        $strings = [];
+
+        foreach (self::map($data, $key) as $name => $value) {
+            if (is_string($value)) {
+                $strings[(string) $name] = $value;
+            }
+        }
+
+        return $strings;
+    }
+
     /**
      * @param  array<mixed>  $data
      * @return array<mixed>

@@ -56,4 +56,10 @@ final class Conversion
             expiresAt: Data::string($data, 'expires_at'),
         );
     }
+
+    /** `report` read into classes, or null before the conversion ran. */
+    public function jobReport(): ?JobReport
+    {
+        return $this->report === null ? null : JobReport::fromArray($this->report);
+    }
 }
