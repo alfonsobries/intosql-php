@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+- The README says a SQL Server script converts to any of the six databases, and its report carries the codes of each target.
+
 ## 0.3.0
 
 - A PostgreSQL dump converts like a MySQL one; `NotConverted` documents its kinds: `materialized_view`, `rule`, `extension`, `policy`, `type` and `other`.

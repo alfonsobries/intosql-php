@@ -17,7 +17,7 @@ use RuntimeException;
 /** The IntoSQL API: convert spreadsheets, CSV and JSON into SQL on IntoSQL's machines. */
 final class IntoSQL
 {
-    public const VERSION = '0.3.0';
+    public const VERSION = '0.3.1';
 
     public const DEFAULT_BASE_URL = 'https://intosql.com/api/v1';
 
