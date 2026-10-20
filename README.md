@@ -23,7 +23,7 @@ echo $conversion->report['rows']['converted'] ?? 0, ' ', $conversion->output?->u
 
 The file streams to storage as it is; the output URL downloads the script for ten minutes. Read the conversion again (`$intosql->conversions->retrieve($id)`) for a fresh one.
 
-A MySQL or MariaDB dump (`.sql`, `.sql.gz`) converts to PostgreSQL like any file. `$conversion->jobReport()` reads the report into classes; for a dump, `tables` lists each table with its rows, columns, fixes and problems:
+A MySQL or MariaDB dump (`.sql`, `.sql.gz`) converts to any of the six databases like any file. `$conversion->jobReport()` reads the report into classes; for a dump, `tables` lists each table with its rows, columns, fixes and problems:
 
 ```php
 foreach ($conversion->jobReport()?->tables ?? [] as $table) {
