@@ -8,7 +8,7 @@ namespace IntoSQL;
 final class NotConverted
 {
     /**
-     * @param  string  $kind  `view`, `trigger`, `procedure`, `function` or `event`; new kinds may be added within v1.
+     * @param  string  $kind  `view`, `trigger`, `procedure`, `function`, `event`, `materialized_view`, `rule`, `extension`, `policy`, `type` or `other`; new kinds may be added within v1.
      * @param  string  $name  The name in the dump, with its database when the dump names more than one.
      */
     public function __construct(

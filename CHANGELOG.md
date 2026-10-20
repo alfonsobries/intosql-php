@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.0
+
+- A PostgreSQL dump converts like a MySQL one; `NotConverted` documents its kinds: `materialized_view`, `rule`, `extension`, `policy`, `type` and `other`.
+
 ## 0.2.1
 
 - The README says a MySQL or MariaDB dump converts to any of the six databases, and its report carries the codes of each target.
